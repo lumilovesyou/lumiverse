@@ -5,6 +5,7 @@ addEventListener("DOMContentLoaded", () => {
     const windows = document.getElementsByClassName("window");
     for (let i = 0; i < windows.length; i++) {
         makeMouseWindow(windows[i]);
+        makeTouchWindow(windows[i]);
     }
 });
 
