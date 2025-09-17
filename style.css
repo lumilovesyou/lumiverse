@@ -62,6 +62,7 @@ body {
     position: absolute;
     z-index: 0;
     overflow: hidden;
+    touch-action: none;
 }
 
 @media (max-width: 600px) {

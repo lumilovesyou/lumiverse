@@ -93,9 +93,8 @@ function makeTouchWindow(draggableWindow) {
     }
 
     function moveWindow(event) {
-        event.preventDefault();
-        windowX = touchX - event.clientX;
-        windowY = touchY - event.clientY;
+        windowX = touchX - event.touches[0].clientX;
+        windowY = touchY - event.touches[0].clientY;
         touchX = event.clientX;
         touchY = event.clientY;
 
