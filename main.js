@@ -6,6 +6,14 @@ addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < windows.length; i++) {
         makeMouseWindow(windows[i]);
     }
+
+    const apps = document.getElementsByClassName("app");
+    for (let i = 0; i < windows.length; i++) {
+        apps[i].addEventListener("click", () => {
+            document.getElementsByClassName(apps[i].classList[1])[1].classList.toggle("hide");
+            document.getElementsByClassName(apps[i].classList[1])[1].classList.toggle("show");
+        });
+    }
 });
 
 function random(min, max) {
@@ -23,6 +31,7 @@ function clamp(value, min, max) {
 }
 
 function makeMouseWindow(draggableWindow) {
+    const overlay = document.getElementById("overlay");
     let mouseX, mouseY, windowX, windowY = 0
 
     draggableWindow.children[0].onmousedown = startDragWindow;
@@ -34,6 +43,7 @@ function makeMouseWindow(draggableWindow) {
             document.onmousemove = null;
         }
         dragging = true;
+        overlay.classList.toggle("hidden");
         event.preventDefault();
         mouseX = event.clientX; 
         mouseY = event.clientY;
@@ -48,6 +58,7 @@ function makeMouseWindow(draggableWindow) {
 
     function moveWindow(event) {
         event.preventDefault();
+        console.log(overlay);
         windowX = mouseX - event.clientX;
         windowY = mouseY - event.clientY;
         mouseX = event.clientX;
@@ -57,6 +68,7 @@ function makeMouseWindow(draggableWindow) {
     }
 
     function stopDraggingWindow() {
+        overlay.classList.toggle("hidden");
         dragging = false;
 
         document.onmouseup = null;

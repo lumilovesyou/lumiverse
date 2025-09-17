@@ -38,6 +38,15 @@ body {
     border-radius: 20%;
 }
 
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 0%;
+    z-index: 999999999;
+    cursor: grabbing;
+}
+
 .centreMe {
     display: flex;
     align-content: center;
@@ -49,6 +58,18 @@ body {
 .centreMe iframe {
     align-self: center;
     margin-left: 10%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.hide {
+    animation: hidden 0.1s linear forwards;
+}
+
+.show {
+    animation: shown 0.1s linear forwards;
 }
 
 .window {
@@ -100,4 +121,26 @@ body {
 iframe {
     width: 100%;
     height: 90%;
+}
+
+@keyframes hidden {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0%;
+    }
+}
+
+@keyframes shown {
+    0% {
+        opacity: 0%;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
