@@ -1,5 +1,6 @@
 let highestZ = 1;
-let dragging = false;
+
+//to-do: make an easy window maker function
 
 addEventListener("DOMContentLoaded", () => {
     const windows = document.getElementsByClassName("window");
@@ -10,6 +11,7 @@ addEventListener("DOMContentLoaded", () => {
     const apps = document.getElementsByClassName("app");
     for (let i = 0; i < windows.length; i++) {
         apps[i].addEventListener("click", () => {
+            apps[i].classList.toggle("closed");
             document.getElementsByClassName(apps[i].classList[1])[1].classList.toggle("hide");
             document.getElementsByClassName(apps[i].classList[1])[1].classList.toggle("show");
         });
@@ -38,11 +40,6 @@ function makeMouseWindow(draggableWindow) {
     windowPosition(random(0, window.innerWidth - (window.innerWidth / 2)), random(0, window.innerHeight - (window.innerHeight / 2)));
 
     function startDragWindow(event) {
-        if (dragging) {
-            document.onmouseup = null;
-            document.onmousemove = null;
-        }
-        dragging = true;
         overlay.classList.toggle("hidden");
         event.preventDefault();
         mouseX = event.clientX; 
@@ -69,7 +66,6 @@ function makeMouseWindow(draggableWindow) {
 
     function stopDraggingWindow() {
         overlay.classList.toggle("hidden");
-        dragging = false;
 
         document.onmouseup = null;
         document.onmousemove = null;

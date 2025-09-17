@@ -16,6 +16,7 @@ body {
     font-family: "Fragment Mono", monospace;
     font-weight: 400;
     font-style: normal;
+    user-select: none;
 }
 
 #appBar {
@@ -25,6 +26,7 @@ body {
     position: absolute;
     display: flex;
     align-items: center;
+    gap: 1%;
     padding-left: 1vw;
     background-color: #02252b;
     filter: drop-shadow(0 0 10px #075664);
@@ -36,6 +38,12 @@ body {
     aspect-ratio: 1/1;
     outline: groove #f8fdff 1px;
     border-radius: 20%;
+    background-color: #01161b;
+}
+
+.closed {
+    filter: grayscale(100%);
+    outline-width: 0.5px !important;
 }
 
 #overlay {
@@ -83,6 +91,14 @@ body {
     position: absolute;
     z-index: 0;
     overflow: hidden;
+}
+
+.window svg {
+    bottom: 2%;
+    right: 2%;
+    position: absolute;
+    cursor: pointer;
+    stroke: #f8fdff;
 }
 
 @media (max-width: 600px) {
