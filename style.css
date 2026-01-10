@@ -43,6 +43,14 @@ hr {
     margin: 1.5em auto 1em auto;
 }
 
+#title {
+    cursor: pointer;
+}
+
+#title:active {
+    color: var(--subtext-colour)
+}
+
 #imageClick img {
     cursor: pointer;
 }
@@ -78,9 +86,12 @@ hr {
 @media (max-width:800px) {
     #userCard {
         width: 80vw !important;
-        filter: drop-shadow(0vw 0vw 5vw white) !important;
         min-height: 90vh !important;
         height: 1px;
+    }
+
+    .dropShadowGlow {
+        filter: drop-shadow(0vw 0vw 5vw white) !important;
     }
 }
 
@@ -102,10 +113,13 @@ hr {
     /* Display */
     background-color: #b6c9cd39;
     border-radius: 1vw;
-    filter: drop-shadow(0vw 0vw 1vw white);
 }
 
 /* Reusable */
+.dropShadowGlow {
+    filter: drop-shadow(0vw 0vw 1vw white);
+}
+
 .centreMe {
     display: flex;
     justify-content: center;
