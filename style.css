@@ -19,17 +19,6 @@ body {
     /* Sizing */
     padding: 0;
     margin: 0;
-
-    /*overflow: hidden;*/
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-colour);
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 h6 {
@@ -43,35 +32,13 @@ hr {
     margin: 1.5em auto 1em auto;
 }
 
-#title {
-    cursor: pointer;
+a {
+    text-decoration: none;
+    color: var(--text-colour);
 }
 
-#title:active {
-    color: var(--subtext-colour)
-}
-
-#imageClick img {
-    cursor: pointer;
-}
-
-#imageClick img:active {
-    filter: brightness(90%) !important;
-}
-
-#imageClick img:hover {
-    filter: brightness(110%);
-}
-
-#boxesCard {
-    /* Display */
-    background-color: #b6c9cd39;
-    border-radius: 1vw;
-
-    /* Scaling */
-    width: 90%;
-    padding: 5%;
-    height: 100%;
+a:hover {
+    text-decoration: underline;
 }
 
 #centreBox {
@@ -115,16 +82,48 @@ hr {
     border-radius: 1vw;
 }
 
-/* Reusable */
-.dropShadowGlow {
-    filter: drop-shadow(0vw 0vw 1vw white);
+#title {
+    cursor: pointer;
 }
+
+#title:active {
+    color: var(--subtext-colour)
+}
+
+#boxesCard {
+    /* Display */
+    background-color: #b6c9cd39;
+    border-radius: 1vw;
+
+    /* Scaling */
+    width: 90%;
+    padding: 5%;
+    height: 100%;
+}
+
+#imageClick img {
+    cursor: pointer;
+}
+
+#imageClick img:active {
+    filter: brightness(90%) !important;
+}
+
+#imageClick img:hover {
+    filter: brightness(110%);
+}
+
+/* Reusable */
 
 .centreMe {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.dropShadowGlow {
+    filter: drop-shadow(0vw 0vw 1vw white);
 }
 
 .noMarginTop {
