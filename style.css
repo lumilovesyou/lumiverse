@@ -83,6 +83,7 @@ a:hover {
 }
 
 #title {
+    user-select: none; /* Technically what you're supposed to do but I'm not sure I like it */
     cursor: pointer;
 }
 
