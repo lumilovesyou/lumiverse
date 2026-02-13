@@ -1,159 +1,90 @@
-:root {
-    --special-text-colour: #f5defd;
-    --text-colour: #fcfdfc;
-    --subtext-colour: #86878c;
-    --divider-colour: #ccced2;
-}
-
-@font-face {
-    font-family: openDyslexic;
-    src: url(./assets/fonts/openDyslexic-Regular.otf);
-}
-
-body {
-    /* Display */
-    color: var(--text-colour);
-    background-color: #001014;
-    font-family: "openDyslexic", 'Trebuchet MS', sans-serif;
-
-    /* Sizing */
-    padding: 0;
-    margin: 0;
-}
-
-h6 {
-    color: var(--subtext-colour);
-}
-
-hr {
-    width: 70%;
-    border: var(--divider-colour) 1px solid;
-    border-radius: 1vw;
-    margin: 1.5em auto 1em auto;
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-colour);
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-#centreBox {
-    /* Alignment */
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
-}
-
-@media (max-width:800px) {
-    #userCard {
-        width: 80vw !important;
-        min-height: 90vh !important;
-        height: 1px;
+@supports (animation-name: none) {
+    @font-face {
+        font-family: openDyslexic;
+        src: url(https://raw.githubusercontent.com/lumilovesyou/lumiverse/refs/heads/main/assets/fonts/OpenDyslexic-Regular.otf);
     }
 
-    .dropShadowGlow {
-        filter: drop-shadow(0vw 0vw 5vw white) !important;
+    .readable {
+        font-family: "openDyslexic";
+        font-size-adjust: 0.5;
     }
-}
 
-#userCard {
-    /* Sizing */
-    height: 90vh;
-    width: 25vw;
-    min-width: 250px;
-    padding: 1% 5% 5% 5%;
-    margin: 1vh;
-    margin-left: -4%;
+    html,body {
+        margin: none;
+        padding: none;
+    }
 
-    /* Alignment */
-    display: flex;
-    align-items: center;
-    align-items: top;
-    flex-direction: column;
+    #title, #subTitle {
+        line-height: 1;
+    }
 
-    /* Display */
-    background-color: #b6c9cd39;
-    border-radius: 1vw;
-}
+    .noBottom {
+        margin-bottom: none;
+        padding-bottom: none;
+        line-height: 0;
+    }
 
-#title {
-    user-select: none; /* Technically what you're supposed to do but I'm not sure I like it */
-    cursor: pointer;
-}
+    .noTop {
+        margin-top: none;
+        padding-top: none;
+        line-height: 0;
+    }
 
-#title:active {
-    color: var(--subtext-colour)
-}
+    b:hover {
+        animation: rainbow 1s infinite;
+    }
 
-#boxesCard {
-    /* Display */
-    background-color: #b6c9cd39;
-    border-radius: 1vw;
+    @keyframes rainbow {
+        0% {
+            color: red;
+        }
+        50% {
+            color: rgb(0, 255, 255);
+        }
+        100% {
+            color: rgb(255, 0, 0);
+        }
+    }
 
-    /* Scaling */
-    width: 90%;
-    padding: 5%;
-    height: 100%;
-}
+    #imagesTable img {
+        cursor: pointer;
+    }
 
-#imageClick img {
-    cursor: pointer;
-}
+    #imageOverlay {
+        position: fixed;
+        width: 100%;
+        height: 100dvh;
+        background-color: #0000004d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inset: 0;
+    }
 
-#imageClick img:active {
-    filter: brightness(90%) !important;
-}
+    #imageOverlay img {
+        max-width: 60%;
+        max-height: 80%;
+        cursor: pointer;
+    }
 
-#imageClick img:hover {
-    filter: brightness(110%);
-}
+    #myEightyEight {
+        cursor: pointer;
+    }
 
-/* Reusable */
+    .hidden {
+        display: none !important;
+    }
 
-.centreMe {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+    #thingie {
+        user-select: none;
+        position: absolute;
+        margin-top: auto;
+        left: 0;
+        opacity: 0%;
+        cursor: default;
+    }
 
-.dropShadowGlow {
-    filter: drop-shadow(0vw 0vw 1vw white);
-}
-
-.noMarginTop {
-    margin-top: 0px;
-}
-
-.noMarginBottom {
-    margin-bottom: 0px;
-}
-
-.large {
-    font-size: large;
-}
-
-.subtext {
-    color: var(--subtext-colour);
-}
-
-.special {
-    color: var(--special-text-colour);
-}
-
-.special:hover {
-    animation: rainbowColour 1.5s infinite;
-}
-
-@keyframes rainbowColour {
-  0% {color: red;}
-  33% {color: rgb(0, 255, 0);}
-  66% {color: rgb(0, 0, 255);}
-  100% {color: rgb(255, 0, 1);}
+    #thingie:hover {
+        opacity: 100%;
+    }
 }

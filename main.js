@@ -1,31 +1,40 @@
-const params = new URLSearchParams(document.location.search); if (params.get("unfancy")) {
-
-    for (let i = 0; i < document.styleSheets.length; i++) {
-        void(document.styleSheets.item(i).disabled=true);
-    }
-
-} else {
-const embedLink = '<a href="https://lumiverse.dev/" target="_blank"><img src="./assets/images/88x31/lumi-88x31.png">';
-
 document.addEventListener("DOMContentLoaded", () => {
-    //Disable glow
-    const userCard = document.getElementById("userCard");
-    if (params.get("noglow")) {
-        userCard.classList.toggle("dropShadowGlow");
+    const overlayBuilding = document.createElement("div");
+    overlayBuilding.innerHTML = '<img id="overlayImage">';
+    overlayBuilding.id = "imageOverlay";
+    overlayBuilding.classList.add("hidden");
+    document.body.appendChild(overlayBuilding);
+    const overlay = document.getElementById("imageOverlay");
+    overlay.addEventListener("click", () => {
+        overlay.classList.add("hidden");
+    });
+    
+    /*
+    const images = document.querySelectorAll("img");
+    for (let i = 0; i < images.length; i++) {
+        images[i].src = images[i].src.replace("jpeg", "webp");
+    }
+    */
+
+    const imagesTable = document.getElementById("imagesTable").children[0].children;
+    for (let i = 0; i < imagesTable.length; i++) {
+        const tableRow = imagesTable[i].children;
+        for (let j = 0; j < tableRow.length; j++) {
+            let childImage = tableRow[j].children[0].children[0];
+            childImage.src = childImage.src.replace("jpeg", "webp");
+            childImage.addEventListener("click", (e) => {
+                overlay.children[0].src = childImage.src;
+                overlay.classList.remove("hidden");
+            });
+        }
     }
 
-    document.getElementById("title").addEventListener("click", () => {
-        userCard.classList.toggle("dropShadowGlow");
-    });
+    const my88x31Building = document.createElement("span");
 
-    //Lumiverse embed 88x31
-    let lumi = document.getElementById("lumi-88x31");
-    let lumiChild = lumi.lastChild.innerHTML;
-    lumi.innerHTML = lumiChild;
-    lumi.addEventListener("click", () => {
-        navigator.clipboard.writeText(embedLink);
-        alert("Copied embed HTML!");
+    const my88x31 = document.getElementById("myEightyEight");
+    my88x31.parentNode.replaceWith(my88x31);
+    my88x31.addEventListener("click", () => {
+        navigator.clipboard.writeText("<a href=\"http://lumiverse.dev/\" target=\"_blank\"><img src=\"https://lumiverse.dev/assets/images/88x31/mine/lumi-88x31.png\"></a>");
+        alert("Copied embed to clipboard!");
     });
 });
-
-}

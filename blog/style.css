@@ -1,0 +1,44 @@
+@font-face {
+    font-family: openDyslexic;
+    src: url(./assets/fonts/OpenDyslexic-Regular.otf);
+}
+
+.readable {
+    font-family: "openDyslexic";
+    font-size: 0.8em;
+    height: 1em;
+}
+
+html,body {
+    margin: none;
+    padding: none;
+}
+
+#title, #subTitle {
+    line-height: 1;
+}
+
+.noBottom {
+    margin-bottom: none;
+    padding-bottom: none;
+    line-height: 0;
+}
+
+.noTop {
+    margin-top: none;
+    padding-top: none;
+    line-height: 0;
+}
+
+#thingie {
+    user-select: none;
+    position: absolute;
+    margin-top: auto;
+    left: 0;
+    opacity: 0%;
+    cursor: default;
+}
+
+#thingie:hover {
+    opacity: 100%;
+}
