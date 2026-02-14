@@ -1,0 +1,26 @@
+@supports (animation-name: none) {
+    .popupImage {
+        cursor: pointer;
+    }
+
+    #imageOverlay {
+        position: fixed;
+        width: 100%;
+        height: 100dvh;
+        background-color: #0000004d;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inset: 0;
+    }
+
+    #imageOverlay img {
+        max-width: 60%;
+        max-height: 80%;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+}

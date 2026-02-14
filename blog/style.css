@@ -1,44 +1,48 @@
-@font-face {
-    font-family: openDyslexic;
-    src: url(./assets/fonts/OpenDyslexic-Regular.otf);
-}
+@import "../assets/modules/image-popup/image-popup.css";
 
-.readable {
-    font-family: "openDyslexic";
-    font-size: 0.8em;
-    height: 1em;
-}
+@supports (animation-name: none) {
+    @font-face {
+        font-family: openDyslexic;
+        src: url(./assets/fonts/OpenDyslexic-Regular.otf);
+    }
 
-html,body {
-    margin: none;
-    padding: none;
-}
+    .readable {
+        font-family: "openDyslexic";
+        font-size: 0.8em;
+        height: 1em;
+    }
 
-#title, #subTitle {
-    line-height: 1;
-}
+    html,body {
+        margin: none;
+        padding: none;
+    }
 
-.noBottom {
-    margin-bottom: none;
-    padding-bottom: none;
-    line-height: 0;
-}
+    #title, #subTitle {
+        line-height: 1;
+    }
 
-.noTop {
-    margin-top: none;
-    padding-top: none;
-    line-height: 0;
-}
+    .noBottom {
+        margin-bottom: none;
+        padding-bottom: none;
+        line-height: 0;
+    }
 
-#thingie {
-    user-select: none;
-    position: absolute;
-    margin-top: auto;
-    left: 0;
-    opacity: 0%;
-    cursor: default;
-}
+    .noTop {
+        margin-top: none;
+        padding-top: none;
+        line-height: 0;
+    }
 
-#thingie:hover {
-    opacity: 100%;
+    #thingie {
+        user-select: none;
+        position: absolute;
+        margin-top: auto;
+        left: 0;
+        opacity: 0%;
+        cursor: default;
+    }
+
+    #thingie:hover {
+        opacity: 100%;
+    }
 }
