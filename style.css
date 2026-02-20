@@ -64,4 +64,10 @@
     #thingie:hover {
         opacity: 100%;
     }
+
+    @media (max-width: 600px) {
+        table {
+            width: 90%
+        }
+    }
 }
