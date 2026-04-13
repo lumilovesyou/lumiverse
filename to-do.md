@@ -1,1 +1,3 @@
-add mobile support
+- [x] ~~add mobile support~~ (close enough)
+- [ ] Move from github pages
+    - will allow for server-rendered templates making code simpler
