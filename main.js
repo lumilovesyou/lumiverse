@@ -11,4 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         navigator.clipboard.writeText("<a href=\"http://lumiverse.dev/\" target=\"_blank\"><img src=\"https://lumiverse.dev/assets/88x31/mine/lumi-88x31.gif\"></a>");
         alert("Copied embed to clipboard!");
     });
+
+    const imagesToReplace = Array.from(document.getElementsByClassName("popupImage"));
+    imagesToReplace.forEach((e) => {
+        e.src = (e.src.split(".jpeg")[0]).concat(".webp")
+    })
 });

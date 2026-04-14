@@ -1,3 +1,4 @@
 - [x] ~~add mobile support~~ (close enough)
 - [ ] Move from github pages
     - will allow for server-rendered templates making code simpler
+- [ ] (Maybe) Replace jpegs with jpgs to see if they work better on old browsers. If not just replace with .gif even though it's gross
