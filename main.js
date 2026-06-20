@@ -1,6 +1,6 @@
 import { setup, makeImagesPopupByClass } from "./assets/modules/image-popup/image-popup.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     setup();
     makeImagesPopupByClass("popupImage");
 
@@ -12,8 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Copied embed to clipboard!");
     });
 
-    const imagesToReplace = Array.from(document.getElementsByClassName("popupImage"));
-    imagesToReplace.forEach((e) => {
-        e.src = (e.src.split(".jpeg")[0]).concat(".webp")
-    })
+
+	if (await ImageDecoder.isTypeSupported("image/webp")) {
+		const imagesToReplace = Array.from(document.getElementsByClassName("popupImage"));
+		imagesToReplace.forEach((e) => {
+			e.src = (e.src.split(".jpeg")[0]).concat(".webp")
+		})
+	}
 });
