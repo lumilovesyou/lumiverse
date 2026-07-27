@@ -1,0 +1,18 @@
+[
+	{
+		"header": "Heading",
+		"body": "Body text",
+		"link": {
+			"text": "URL",
+			"url": "https://example.com/"
+		}
+	},
+	{
+		"header": "Minecraft Mods",
+		"body": "I have a collection of Minecraft mods",
+		"link": {
+			"text": "Modrinth",
+			"url": "https://modrinth.com/user/LumiLovesYou/"
+		}
+	}
+]

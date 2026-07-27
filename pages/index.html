@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Google Fonts, probably remove since now unused ~~~~~~~ -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Trykker&display=swap" rel="stylesheet">
+
     <title>Lumiverse</title>
+	<script src="./assets/documents/index.js"></script>
+	<link rel="stylesheet" href="./assets/documents/style.css">
 </head>
 <header>
     <h1>Lumiverse</h1>
-    {{quote|safe}}
+    <h2>{{quote|safe}}</h2>
 </header>
 <body>
+	<div id="about">
+		<p>
+			I'm Luminara, though I usually go by Lumi.<br><br>
 
+			About me:
+			<div>
+				<span>My Pronouns</span> <g>→</g> <span>She<g>/</g>They<g>/</g>It</span>
+			</div>
+
+			<!--
+			Online you can generally find me under the usernames FelisAraneae or LumiLovesYou.<br>I love programming(Though I'm really bad at it), making videos, redesigning my website for the millionth time, listening to the same music over and over, buying games I'll never play, coming up with awesome ideas that won't ever see the light of day, and running ungodly modern programs on retro devices
+			-->
+		</p>
+	</div>
+	<!-- Loop for sections -->
+	<div id="sections">
+		{% for section in sections %}
+		<div class="section">
+			<h3>{{ section.header }}</h3>
+			<hr>
+			<p>{{ section.body }}</p>
+			<a href="{{ section.link.url }}" target="_blank">{{ section.link.text }}</a>
+		</div>
+		{% else %}
+			<p>Missing content</p>
+		{% endfor %}
+	</div>
 </body>
 <footer>
 
