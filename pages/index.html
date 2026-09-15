@@ -1,58 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<!-- Google Fonts, probably remove since now unused ~~~~~~~ -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Trykker&display=swap" rel="stylesheet">
+    <head>
+        <title>Lumiverse</title>
+        <script src="./assets/documents/index.js"></script>
+        <link rel="stylesheet" href="./assets/documents/style.css" />
+    </head>
+    <header>
+        <marquee direction="left">
+            {% for url in urls %}
+            <a href="{{ url.url }}" target="_blank">{{ url.text }}</a>
+            {% if not loop.last %}<span> / </span>{% endif %}{% endfor %}
+        </marquee>
 
-    <title>Lumiverse</title>
-	<script src="./assets/documents/index.js"></script>
-	<link rel="stylesheet" href="./assets/documents/style.css">
-</head>
-<header>
-    <h1>Lumiverse</h1>
-    <h2>{{quote|safe}}</h2>
-</header>
-<body>
-	<div id="about">
-		<p>
-			I'm Luminara, though I usually go by Lumi.<br>
-
-			<div class="horizontalList">
-				<b>About me:</b>
-				<span class="rainbow">Pronouns <g>-></g> She<g>/</g>They<g>/</g>It</span>
-				<span>My Interest <g>-></g> Programming</span>
-				<span>My Website <g>-></g> Terrible</span>
-			</div>
-		</p>
-	</div>
-	<!-- Loop for sections -->
-	<div id="sections">
-		{% for section in sections %}
-		<div class="section">
-			<h3>{{ section.header }}</h3>
-			<hr>
-			<p>{{ section.body }}</p>
-			<a href="{{ section.link.url }}" target="_blank">{{ section.link.text }}</a>
-		</div>
-		{% else %}
-			<p>Missing content</p>
-		{% endfor %}
-	</div>
-</body>
-<footer>
-
-</footer>
-<script>
-//Just here because I'm too lazy to reload the page every time
-async function reload() {
-	await new Promise((resolve) => setTimeout(resolve, 1000));
-	location.reload();
-}
-reload();
-</script>
+        <h1>Lumiverse</h1>
+        {% if quote.url %}
+        <h2><a href="{{ quote.url }}">{{ quote.text }}</a></h2>
+        {% else %}
+        <h2>{{ quote.text|safe }}</h2>
+        {% endif %}
+    </header>
+    <body></body>
+    <footer></footer>
+    <script>
+        //Just here because I'm too lazy to reload the page every time
+        /*async function reload() {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            location.reload();
+        }*/
+        reload();
+    </script>
 </html>
