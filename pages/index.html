@@ -20,16 +20,14 @@
 <body>
 	<div id="about">
 		<p>
-			I'm Luminara, though I usually go by Lumi.<br><br>
+			I'm Luminara, though I usually go by Lumi.<br>
 
-			About me:
-			<div>
-				<span>My Pronouns</span> <g>→</g> <span>She<g>/</g>They<g>/</g>It</span>
+			<div class="horizontalList">
+				<b>About me:</b>
+				<span class="rainbow">Pronouns <g>-></g> She<g>/</g>They<g>/</g>It</span>
+				<span>My Interest <g>-></g> Programming</span>
+				<span>My Website <g>-></g> Terrible</span>
 			</div>
-
-			<!--
-			Online you can generally find me under the usernames FelisAraneae or LumiLovesYou.<br>I love programming(Though I'm really bad at it), making videos, redesigning my website for the millionth time, listening to the same music over and over, buying games I'll never play, coming up with awesome ideas that won't ever see the light of day, and running ungodly modern programs on retro devices
-			-->
 		</p>
 	</div>
 	<!-- Loop for sections -->
@@ -49,4 +47,12 @@
 <footer>
 
 </footer>
+<script>
+//Just here because I'm too lazy to reload the page every time
+async function reload() {
+	await new Promise((resolve) => setTimeout(resolve, 1000));
+	location.reload();
+}
+reload();
+</script>
 </html>

@@ -38,6 +38,7 @@ QUOTES = [
     "Joy pilled",
     "Lego Movie (2014)",
     "Licensed Furry",
+    "Lonely and looking for cuddles",
     "Look I'm trying, okay?",
     "Lorem ipsum dolor sit amet",
     "Lots of ideas, little motivation",
@@ -45,7 +46,7 @@ QUOTES = [
     "Meow meow meow",
     "Minceraft",
     "More coming soon! (lie)",
-    "New website, same boring person"
+    "New website, same boring person",
     "Not enough gay",
     "Not human friendly",
     "Not trans enough",
@@ -60,8 +61,9 @@ QUOTES = [
     "exhausted -w-",
     "oupy :3",
     "tired",
-    "woaw"
+    "woaw",
 ]
 
-def getRandomQuote():
-    return QUOTES[randint(0,len(QUOTES) - 1)]
+
+def get_random_quotes():
+    return QUOTES[randint(0, len(QUOTES) - 1)]
