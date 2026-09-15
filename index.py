@@ -24,5 +24,10 @@ def test():
     return render_template("test.html")
 
 
+@app.route("/i-hate-page-resizing")
+def i_hate_page_resizing():
+    return render_template("i-hate-page-resizing.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

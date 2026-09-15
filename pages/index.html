@@ -2,15 +2,20 @@
 <html>
     <head>
         <title>Lumiverse</title>
-        <script src="./assets/documents/index.js"></script>
         <link rel="stylesheet" href="./assets/documents/style.css" />
     </head>
     <header>
-        <marquee direction="left">
-            {% for url in urls %}
-            <a href="{{ url.url }}" target="_blank">{{ url.text }}</a>
-            {% if not loop.last %}<span> / </span>{% endif %}{% endfor %}
-        </marquee>
+        <div id="marquee">
+            <div class="track">
+                {% for url in urls %}
+                <span>
+                    <a href="{{ url.url }}" target="_blank"> {{ url.text }}</a>
+                    <span>/</span>
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+        <script src="./assets/documents/index.js"></script>
 
         <h1>Lumiverse</h1>
         {% if quote.url %}
@@ -26,7 +31,7 @@
         /*async function reload() {
             await new Promise((resolve) => setTimeout(resolve, 1000));
             location.reload();
-        }*/
-        reload();
+        }
+        reload();*/
     </script>
 </html>
