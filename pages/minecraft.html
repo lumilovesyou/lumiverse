@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Minecraft - Lumiverse</title>
+        <link rel="stylesheet" href="assets/documents/minecraft/minecraft.css" />
+    </head>
+    <header>
+        <h1>
+            <img src="./assets/images/minecraft/lumiverse_title.webp" />
+        </h1>
+    </header>
+    <body>
+        <div id="contentContainer">
+            <input
+                type="text"
+                spellcheck="false"
+                placeholder="Search for mods . . ."
+                id="searchBox"
+                autocomplete="off"
+                autofocus
+            />
+            <div id="noModsText" class="dropShadow hidden">
+                <span>No mods found!</span>
+            </div>
+            <div id="modBoxes">
+                {% for mod in mods %}
+                <div class="modBox">
+                    <div class="image">
+                        <img
+                            src="{{ mod.icon }}"
+                        />
+                    </div>
+                    <div class="text">
+                        <span class="modName dropShadow">{{ mod.name }}</span>
+                        <span class="links">
+                            {% for url in mod.urls %}
+                            <a href="{{ url }}" target="_blank">
+                                <img class="dropShadow"
+                                    src="
+                                    {% if "modrinth" in url %}
+                                        ./assets/images/minecraft/icon_modrinth.webp" style="--dropshadow-colour: #1cda6c"
+                                    {% elif "github" in url %}
+                                        ./assets/images/minecraft/icon_github.webp" style="--dropshadow-colour: black"
+                                    {% else %}
+                                        ./assets/images/minecraft/icon_curseforge.webp" style="--dropshadow-colour: #f16436"
+                                    {% endif %}
+                                />
+                            </a>
+                            {% endfor %}</span
+                        >
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+    <footer></footer>
+    <script src="./assets/documents/minecraft/minecraft.js"></script>
+</html>

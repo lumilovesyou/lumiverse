@@ -28,9 +28,12 @@ header {
     margin-bottom: 5vh;
 
     #marquee {
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
         background-color: #ffffff10;
-        border-bottom: var(--text) solid 1px;
+        border-top: var(--text) solid 1px;
 
         padding: 5px 0;
         font-size: 1em;

@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+import os
+
+from flask import Flask, redirect, render_template
+from flask.helpers import url_for
 
 import scripts.information as info
 from scripts.random_quote import get_random_quote
@@ -10,8 +13,6 @@ app = Flask(
 
 @app.route("/")
 def index():
-    print("sections")
-    print(info.read("sections"))
     return render_template(
         "index.html",
         quote=get_random_quote(),
@@ -19,14 +20,17 @@ def index():
     )
 
 
-@app.route("/test")
-def test():
-    return render_template("test.html")
+@app.route("/minecraft")
+def minecraft():
+    return render_template("minecraft.html", mods=info.read("mods"))
 
 
-@app.route("/i-hate-page-resizing")
-def i_hate_page_resizing():
-    return render_template("i-hate-page-resizing.html")
+@app.route("/<string:page>")
+def route(page: str):
+    if os.path.exists(f"./pages/{page}.html"):
+        return render_template(f"{page}.html")
+    else:
+        return redirect(url_for("index"), 301)
 
 
 if __name__ == "__main__":
