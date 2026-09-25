@@ -1,15 +1,45 @@
-* {
-    --dropshadow-colour: #404040;
-    --dropshadow-darkness: 80%;
-}
-
 @font-face {
-    font-family: Minecraftia;
+    font-family: "Minecraftia";
     src: url("../../licensed/fonts/Minecraftia-Regular.ttf");
+    font-display: swap;
 }
 
+/* Core Things */
+:root {
+    --text-colour: #404040;
+    --visible-text-colour: white;
+    --footer-text-colour: #cf9725;
+    --url-text-colour: #31a4a4;
+    --focus-colour: #ffffff80;
+
+    --dropshadow-colour: var(--text-colour);
+    --dropshadow-darkness: 80%;
+
+    font-family: "Minecraftia", sans-serif;
+}
+
+/* Page styling */
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+/* Background styling */
+body {
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse at center, #00000025 20%, #00000080 80%) fixed
+            center / cover no-repeat,
+        url("../../images/minecraft/dirt_background.webp") fixed center /
+            40.96px repeat;
+}
+
+/* Reusable classes */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .dropShadow {
@@ -23,75 +53,73 @@
     );
 }
 
-body {
-    background:
-        radial-gradient(ellipse farthest-corner, #00000025 20%, #00000080 80%)
-            center / cover no-repeat,
-        url("../../images/minecraft/dirt_background.webp") center / 40.96px
-            repeat;
-    height: 100vh;
-    background-attachment: fixed;
-}
-
+/* Header styling */
 header {
     text-align: center;
 
     h1 {
+        margin: 3rem 0;
         font-size: 3rem;
-        margin-top: 3rem;
         user-select: none;
 
         img {
+            max-width: min(90vw, 100%);
+            margin-inline: auto;
+            display: block;
             height: 1em;
             width: auto;
         }
     }
 }
 
+/* Content styling */
 body {
     #contentContainer {
-        font-family: Minecraftia, sans-serif;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        width: 100%;
 
-        input[type="text"] {
-            font-family: inherit;
-            background-color: #000;
-            color: white;
-            box-sizing: border-box;
-            height: 36px;
-            padding: 11px 5px 1px;
+        #searchBox {
             font-size: 16px;
             line-height: 1;
-            border: 3px solid white;
+            height: 36px;
+            color: var(--visible-text-colour);
+            border: 3px solid var(--visible-text-colour);
+            background-color: #000;
+            font-family: inherit;
+
+            @-moz-document url-prefix() {
+                padding: 11px 5px 1px;
+            }
+            box-sizing: border-box;
 
             &:focus {
-                outline: 3px solid #ffffff80;
+                outline: 3px solid var(--focus-colour);
             }
         }
     }
 
     #noModsText {
         margin-top: 4em;
-        color: white;
-        --dropshadow-colour: white;
+        color: var(--visible-text-colour);
+
+        --dropshadow-colour: var(--visible-text-colour);
         --dropshadow-darkness: 10%;
     }
 
     #modBoxes {
-        margin-top: 4em;
-        color: #404040;
+        color: var(--text-colour);
+        margin: 4em 0;
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
+        flex-direction: row;
         justify-content: center;
-        gap: 1vw;
+        gap: clamp(0.75rem, 1vw, 1rem);
 
         .modBox {
             width: 300px;
-            aspect-ratio: 1/1;
+            aspect-ratio: 1;
             position: relative;
 
             .image {
@@ -109,31 +137,61 @@ body {
 
             .text {
                 width: calc(100% - 36px);
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: flex;
-                flex-direction: row;
                 padding: 7px 18px 0 18px;
+                flex-direction: row;
+                position: absolute;
+                display: flex;
+                left: 0;
+                top: 0;
 
                 .modName {
-                    --dropshadow-colour: #404040;
                     text-overflow: ellipsis;
-                    overflow: hidden;
                     white-space: nowrap;
+                    overflow: hidden;
                     width: 60%;
                 }
 
                 .links {
                     margin-left: auto;
+                    display: inline-flex;
+
                     img {
                         margin-left: 0.5em;
                         vertical-align: top;
                         height: 1.5em;
+
                         --dropshadow-darkness: 40%;
+
+                        &:hover {
+                            filter: brightness(150%);
+                        }
                     }
                 }
             }
+        }
+    }
+}
+
+/* Footer design */
+footer {
+    color: var(--footer-text-colour);
+    line-height: 1;
+    padding-bottom: 0.6rem;
+    text-align: center;
+    margin-top: auto;
+
+    p {
+        margin: 0.5em 0;
+    }
+
+    a {
+        color: var(--url-text-colour);
+        text-decoration-line: underline;
+        text-underline-offset: -4px;
+        text-decoration-thickness: 2.5px;
+
+        &:hover {
+            color: color-mix(in srgb, var(--url-text-colour), white 40%);
         }
     }
 }

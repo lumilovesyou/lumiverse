@@ -1,34 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const modsBox = document.getElementById("modBoxes");
-  const noneFoundText = document.getElementById("noModsText");
+  /* Consts */
+  const searchBox = document.getElementById("searchBox");
+  const modsList = document.getElementById("modBoxes");
+  const noModsMessage = document.getElementById("noModsText");
 
-  function showModsByName(search) {
-    const mods = modsBox.children;
-    let countHidden = 0;
-    for (let i = 0; i < mods.length; i++) {
-      let name = mods[i]
-        .getElementsByClassName("modName")[0]
-        .innerText.toLowerCase();
-      if (search && !name.includes(search)) {
-        mods[i].classList.add("hidden");
-        countHidden++;
-      } else {
-        mods[i].classList.remove("hidden");
-      }
-    }
-    if (countHidden == mods.length) {
-      noneFoundText.classList.remove("hidden");
-    } else {
-      noneFoundText.classList.add("hidden");
-    }
-  }
+  /* Assemble mods into a list */
+  const mods = [...modsList.getElementsByClassName("modBox")].map((e) => ({
+    element: e,
+    name: e.querySelector(".modName").textContent.trim().toLowerCase(),
+  }));
 
-  document.getElementById("searchBox").addEventListener("input", (e) => {
-    let search = e.target.value;
-    if (search) {
-      showModsByName(search.toLowerCase());
-    } else {
-      showModsByName("");
+  /* Loop through mods and hide/show as needed */
+  const filterMods = (query) => {
+    const normalisedQuery = query.trim().toLowerCase();
+    let visibleCount = 0;
+
+    for (const mod of mods) {
+      const isVisible = mod.name.includes(normalisedQuery);
+      mod.element.classList.toggle("hidden", !isVisible);
+      visibleCount += Number(isVisible);
     }
+
+    noModsMessage.classList.toggle("hidden", visibleCount > 0);
+  };
+
+  /* Run search function when textbox input changes */
+  searchBox.addEventListener("input", (e) => {
+    filterMods(e.currentTarget.value);
   });
 });
