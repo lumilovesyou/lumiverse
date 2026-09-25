@@ -1,74 +1,47 @@
 [
   {
-    "name": "Mod Name",
+    "name": "Deepslate Cobble Gen",
     "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
+      "https://modrinth.com/mod/deepslate-cobble-gen",
+      "https://www.curseforge.com/minecraft/mc-mods/deepslate-cobble-gen",
+      "https://github.com/lumilovesyou/Deepslate-Cobble-Gen"
     ],
     "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
   },
   {
-    "name": "Name",
+    "name": "Have a Bad Day",
     "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
+      "https://modrinth.com/mod/have-a-bad-day",
+      "https://www.curseforge.com/minecraft/mc-mods/have-a-bad-day",
+      "https://github.com/lumilovesyou/Have-a-Bad-Day"
     ],
-    "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
+    "icon": "https://raw.githubusercontent.com/lumilovesyou/Have-a-Bad-Day/refs/heads/main/src/main/resources/assets/have-a-bad-day/icon.png"
   },
   {
-    "name": "5752e",
+    "name": "Lumi's Lots",
     "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
+      "https://modrinth.com/mod/lumis-lots",
+      "https://www.curseforge.com/minecraft/mc-mods/lumis-lots",
+      "https://github.com/lumilovesyou/Lumis-Lots"
     ],
-    "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
+    "icon": "https://raw.githubusercontent.com/lumilovesyou/Lumis-Lots/refs/heads/master/src/main/resources/icon.png"
   },
   {
-    "name": ";k;l",
+    "name": "Sound6",
     "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
+      "https://modrinth.com/mod/sound6",
+      "https://www.curseforge.com/minecraft/mc-mods/sound6",
+      "https://github.com/lumilovesyou/Sound6"
     ],
-    "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
+    "icon": "https://raw.githubusercontent.com/lumilovesyou/Sound6/refs/heads/main/sound6/src/main/resources/assets/sound6/icon.png"
   },
   {
-    "name": "zvxvc",
+    "name": "No MineStrator Ads",
     "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
+      "https://modrinth.com/mod/no-minestrator-ads",
+      "https://www.curseforge.com/minecraft/mc-mods/no-minestrator-ads",
+      "https://github.com/lumilovesyou/No-MineStrator-Ads/"
     ],
-    "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
-  },
-  {
-    "name": "dsfgsd",
-    "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
-    ],
-    "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
-  },
-  {
-    "name": "Mod 4564ada",
-    "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
-    ],
-    "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
-  },
-  {
-    "name": "23 Name",
-    "urls": [
-      "https://modrinth.com",
-      "https://curseforge.com",
-      "https://github.com/"
-    ],
-    "icon": "https://raw.githubusercontent.com/lumilovesyou/Deepslate-Cobble-Gen/refs/heads/main/deepslate-cobble-generator/src/main/resources/assets/deepslate-cobble-gen/icon.png"
+    "icon": "https://raw.githubusercontent.com/lumilovesyou/No-MineStrator-Ads/refs/heads/main/src/main/resources/assets/no-minestrator-ads/icon.png"
   }
 ]

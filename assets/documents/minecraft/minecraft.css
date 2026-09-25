@@ -118,6 +118,10 @@ body {
 
                 .modName {
                     --dropshadow-colour: #404040;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 60%;
                 }
 
                 .links {
