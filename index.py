@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, redirect, render_template
+from flask import Flask, redirect, render_template, request
 from flask.helpers import url_for
 
 import scripts.information as info
@@ -16,13 +16,18 @@ def index():
     return render_template(
         "index.html",
         quote=get_random_quote(),
-        urls=info.read("urls"),
+        marquee_urls=info.read("marquee-urls"),
+        segments=info.read("88x31s"),
     )
 
 
 @app.route("/minecraft")
 def minecraft():
-    return render_template("minecraft.html", mods=info.read("mods"))
+    return render_template(
+        "minecraft.html",
+        mods=info.read("mods"),
+        pageUrl=request.base_url,
+    )
 
 
 @app.route("/<string:page>")

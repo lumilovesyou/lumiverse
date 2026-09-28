@@ -1,16 +1,50 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Minecraft - Lumiverse</title>
-        <link rel="stylesheet" href="assets/documents/minecraft/minecraft.css" />
-    </head>
-    <header>
-        <h1>
-            <a href="../"><img src="./assets/images/minecraft/lumiverse_title.webp" /></a>
-        </h1>
-    </header>
     <body>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+            <title>Minecraft Mods - Lumiverse</title>
+            <meta name="description" content="Browse Minecraft mods made by LumiLovesYou." />
+            <meta name="author" content="LumiLovesYou" />
+            <meta name="robots" content="index, follow" />
+            <meta name="theme-color" content="#1c1c1c" />
+            <link rel="canonical" href="{{ pageUrl }}" />
+
+            <link rel="stylesheet" href="{{ url_for('static', filename='documents/minecraft/minecraft.css') }}" />
+
+            <!-- Favicons -->
+            <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/images/minecraft/favicon-16x.ico">
+            <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/images/minecraft/favicon-32x.ico">
+            <link rel="icon" type="image/x-icon" sizes="48x48" href="assets/images/minecraft/favicon-48x.ico">
+
+            <!-- Open Graph -->
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="Lumiverse" />
+            <meta property="og:title" content="Minecraft Mods - Lumiverse" />
+            <meta property="og:description" content="Browse Minecraft mods made by LumiLovesYou." />
+            <meta property="og:url" content="{{ pageUrl }}" />
+            <meta property="og:image" content="{{ url_for('static', filename='images/minecraft/lumiverse_title_hq.png', _external=True) }}" />
+            <meta property="og:image:alt" content="LumiLovesYou's Minecraft mods" />
+            <meta property="og:locale" content="en_US" />
+
+            <!-- Twitter -->
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Minecraft Mods - Lumiverse" />
+            <meta name="twitter:description" content="Browse Minecraft mods made by LumiLovesYou, with links to Modrinth, CurseForge, and GitHub." />
+            <meta name="twitter:image" content="{{ url_for('static', filename='images/minecraft/lumiverse_title_hq.png', _external=True) }}" />
+            <meta name="twitter:image:alt" content="LumiLovesYou's Minecraft mods" />
+        </head>
+        <header>
+            <h1>
+                <a href="../"><img src="./assets/images/minecraft/lumiverse_title.webp" alt="Lumiverse" /></a>
+            </h1>
+        </header>
         <div id="contentContainer">
+            <noscript>
+                <p>Search requires JavaScript :(</p>
+            </noscript>
             <input
                 type="text"
                 spellcheck="false"
@@ -24,15 +58,16 @@
             </div>
             <div id="modBoxes">
                 {% for mod in mods %}
-                <div class="modBox">
+                <article class="modBox">
                     <div class="image">
                         <img
                             src="{{ mod.icon }}"
                             title="{{ mod.name }}"
+                            alt=""
                         />
                     </div>
                     <div class="text">
-                        <span class="modName dropShadow" title="{{ mod.name }}">{{ mod.name }}</span>
+                        <h2 class="modName dropShadow" title="{{ mod.name }}">{{ mod.name }}</h2>
                         <span class="links">
                             {% for url in mod.urls %}
                             <a href="{{ url }}" target="_blank">
@@ -50,15 +85,15 @@
                             {% endfor %}</span
                         >
                     </div>
-                </div>
+                </article>
                 {% endfor %}
             </div>
         </div>
+        <footer>
+            <p>© 2026 LumiLovesYou</p>
+            <p id="affiliationText">Not affiliated with Mojang AB or Microsoft</p>
+            <a href="https://github.com/lumilovesyou/lumiverse" target="_blank">Source on GitHub</a>
+        </footer>
+        <script src="{{ url_for('static', filename='documents/minecraft/minecraft.js') }}"></script>
     </body>
-    <footer>
-        <p>© 2026 LumiLovesYou</p>
-        <p id="affiliationText">Not affiliated with Mojang AB or Microsoft</p>
-        <a href="https://github.com/lumilovesyou/lumiverse" target="_blank">Source on GitHub</a>
-    </footer>
-    <script src="./assets/documents/minecraft/minecraft.js"></script>
 </html>

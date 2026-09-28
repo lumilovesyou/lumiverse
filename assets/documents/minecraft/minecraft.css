@@ -80,6 +80,10 @@ body {
         align-items: center;
         width: 100%;
 
+        p {
+            color: var(--visible-text-colour);
+        }
+
         #searchBox {
             font-size: 16px;
             line-height: 1;
@@ -149,6 +153,10 @@ body {
                     white-space: nowrap;
                     overflow: hidden;
                     width: 60%;
+
+                    /* Using h2 for better Lynx support */
+                    font: inherit;
+                    margin: 0;
                 }
 
                 .links {

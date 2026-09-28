@@ -17,6 +17,12 @@ const pageWidth = window.innerWidth;
 const marquee = document.getElementById("marquee");
 const marqueeContent = marquee.children[0];
 
+//This is done to keep there from being an extra / when viewing the page in Lynx
+const marqueeLastChild =
+  marqueeContent.children[marqueeContent.childElementCount - 1];
+marqueeLastChild.innerHTML = marqueeLastChild.innerHTML + "<span>/</span>";
+//
+
 updateMarquee(
   Math.max(Math.ceil(pageWidth / (0.6 * marqueeContent.offsetWidth)), 2),
 );

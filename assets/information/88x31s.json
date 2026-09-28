@@ -1,0 +1,64 @@
+[
+  {
+    "categoryName": "Navigation",
+    "boxes": [
+      {
+        "image": "navigation/minecraft.webp",
+        "url": "/minecraft",
+        "alt": "Minecraft Mods"
+      },
+      {
+        "image": "navigation/credits.webp",
+        "url": "https://credit.lumiverse.dev/",
+        "alt": "Credits"
+      },
+      {
+        "image": "navigation/placeholder-88x31.webp",
+        "url": "/wow",
+        "alt": "Placeholder 88x31"
+      }
+    ]
+  },
+  {
+    "categoryName": "My Friends' Sites",
+    "newTab": true,
+    "boxes": [
+      {
+        "image": "friends/crizer.webp",
+        "url": "https://crizer.dingusblingus.cc",
+        "alt": "Crizer"
+      },
+      {
+        "image": "friends/jossey.webp",
+        "url": "https://dev-site.homecamp.biz/",
+        "alt": "Jossey"
+      },
+      {
+        "image": "friends/zxrkcr.webp",
+        "url": "https://schlumbis.dev/",
+        "alt": "zxrkcr"
+      }
+    ]
+  },
+  {
+    "categoryName": "About the Site",
+    "newTab": true,
+    "boxes": [
+      {
+        "image": "about-site/made-with-zed.webp",
+        "url": "https://zed.dev/",
+        "alt": "Made with Zed"
+      },
+      {
+        "image": "about-site/powered-by-debian.webp",
+        "url": "https://www.debian.org/",
+        "alt": "Powered by Debian"
+      },
+      {
+        "image": "about-site/lynx-friendly.webp",
+        "url": "https://lynx.invisible-island.net/",
+        "alt": "Lynx Friendly"
+      }
+    ]
+  }
+]
