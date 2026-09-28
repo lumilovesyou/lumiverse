@@ -9,7 +9,7 @@
       },
       {
         "image": "navigation/credits.webp",
-        "url": "https://credit.lumiverse.dev/",
+        "url": "https://credit.lumiverse.dev",
         "alt": "Credits"
       },
       {
@@ -30,34 +30,44 @@
       },
       {
         "image": "friends/jossey.webp",
-        "url": "https://dev-site.homecamp.biz/",
+        "url": "https://dev-site.homecamp.biz",
         "alt": "Jossey"
       },
       {
+        "image": "friends/leah.webp",
+        "url": "https://eleusinianmysteries.dev",
+        "alt": "Leah"
+      },
+      {
         "image": "friends/zxrkcr.webp",
-        "url": "https://schlumbis.dev/",
+        "url": "https://schlumbis.dev",
         "alt": "zxrkcr"
       }
     ]
   },
   {
-    "categoryName": "About the Site",
+    "categoryName": "About this Site",
     "newTab": true,
     "boxes": [
       {
         "image": "about-site/made-with-zed.webp",
-        "url": "https://zed.dev/",
+        "url": "https://zed.dev",
         "alt": "Made with Zed"
       },
       {
         "image": "about-site/powered-by-debian.webp",
-        "url": "https://www.debian.org/",
+        "url": "https://www.debian.org",
         "alt": "Powered by Debian"
       },
       {
         "image": "about-site/lynx-friendly.webp",
-        "url": "https://lynx.invisible-island.net/",
+        "url": "https://lynx.invisible-island.net",
         "alt": "Lynx Friendly"
+      },
+      {
+        "image": "about-site/webp-now.webp",
+        "url": "https://developers.google.com/speed/webp",
+        "alt": "WebP"
       }
     ]
   }

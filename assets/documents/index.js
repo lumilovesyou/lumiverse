@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Lumi says hello!");
+  console.log(window.innerWidth);
 });
 
 ////Marquee Content
@@ -24,7 +25,7 @@ marqueeLastChild.innerHTML = marqueeLastChild.innerHTML + "<span>/</span>";
 //
 
 updateMarquee(
-  Math.max(Math.ceil(pageWidth / (0.6 * marqueeContent.offsetWidth)), 2),
+  Math.max(Math.ceil(pageWidth / (0.6 * marqueeContent.offsetWidth)), 3),
 );
 ////
 

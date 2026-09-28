@@ -111,3 +111,13 @@ body {
         }
     }
 }
+
+@media (max-width: 600px) {
+    .boxes a img {
+        width: 20vw;
+    }
+
+    header #marquee {
+        font-size: 0.8em;
+    }
+}
