@@ -30,6 +30,15 @@ def minecraft():
     )
 
 
+@app.route("/tracker")
+def tracker():
+    return render_template(
+        "tracker.html",
+        projects=info.read("tracked-projects"),
+        pageUrl=request.base_url,
+    )
+
+
 @app.route("/<string:page>")
 def route(page: str):
     if os.path.exists(f"./pages/{page}.html"):

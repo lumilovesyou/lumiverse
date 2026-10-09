@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Title",
+    "percentage": 30,
+    "description": [
+      {
+        "type": "list",
+        "title": "Project Goals",
+        "content": ["Goals"]
+      },
+      {
+        "type": "check",
+        "title": "Project Features",
+        "content": [
+          {
+            "text": "Goals",
+            "checked": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Title2",
+    "percentage": 70,
+    "description": [
+      {
+        "type": "list",
+        "title": "Project Goals2",
+        "content": ["Goals", "Goals2"]
+      },
+      {
+        "type": "check",
+        "title": "Project Features2",
+        "content": [
+          {
+            "text": "Feature",
+            "checked": true
+          },
+          {
+            "text": "Feature2",
+            "checked": false
+          }
+        ]
+      }
+    ]
+  }
+]

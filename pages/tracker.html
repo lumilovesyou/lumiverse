@@ -10,22 +10,51 @@
             <h1><a href="../">Lumiverse</a></h1>
             <h2>Projects Page</h2>
         </header>
-        <div id="trackerBox">
+        <div id="projectsContainer">
+            {% for project in projects %}
             <div class="projectTracker">
-                <h3><a href="">Title</a></h3>
+                <h2><a href="" target="_blank">{{ project.title }}</a></h2>
                 <div class="alignRow">
-                    <progress max="100" value="70">70 %</progress>
-                    <span class="collapseableToggle">▶</span>
+                    <p>{{ project.percentage }}%</p>
+                    <div class="progressBar">
+                        <div
+                            class="progressFill"
+                            style="--percentage: {{ project.percentage }}"
+                        ></div>
+                    </div>
+                    <span class="collapsibleToggle">▶</span>
                 </div>
-                <div class="collapseable">
-                    <ul>
-                        <li>Goals</li>
-                    </ul>
+                <div class="collapsibleContainer">
+                    <div class="collapsible">
+                        <hr />
+                        {% for box in project.description %}
+                        <h4>{{ box.title }}</h4>
+                        {% if box.type == "list" %}
+                        <ul class="text {% if not loop.last %}gap{% endif %}">
+                            {% for item in box.content %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <ul class="check">
+                            {% for item in box.content %}
+                            <li
+                                style="
+                                    --checkmark: &quot;{% if item.checked %}☒{% else %}☐{% endif %}&quot;;
+                                "
+                            >
+                                {{ item.text }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %} {% endfor %}
+                    </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </body>
-    <script>
+    <script src="assets/documents/tracker/tracker.js">
         //Just here because I'm too lazy to reload the page every time
         /*async function reload() {
             await new Promise((resolve) => setTimeout(resolve, 1000));

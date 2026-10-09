@@ -1,12 +1,18 @@
+:root {
+    interpolate-size: allow-keywords;
+}
+
 * {
+    --background-colour: #001014;
     --text-colour: #fcfdfc;
     --darkest-text-colour: #c2c2c2;
     --dark-text-colour: #bdc2c2;
     --dark-text-hover-colour: #d0d6d6;
+    --collapsible-animation: cubic-bezier(0.42, 0, 0.69, 0.97);
 }
 
 body {
-    background-color: #001014;
+    background-color: var(--background-colour);
     color: var(--text-colour);
     font-family: serif;
     margin: 0;
@@ -39,31 +45,108 @@ header {
 }
 
 body {
-    #trackerBox {
-        width: 100%;
-        background-color: red;
+    #projectsContainer {
         display: flex;
-        flex-direction: row;
+        align-items: flex-start;
         flex-wrap: wrap;
+        gap: clamp(1rem, 2vw, 4rem);
         justify-content: center;
+        width: 80%;
+        padding-left: 10%;
 
         .projectTracker {
-            background-color: green;
+            background-color: #002b36;
+            border: solid 2px var(--text-colour);
+            border-radius: 4px;
+            padding: 10px;
 
-            a {
-                color: inherit;
-                text-decoration: none;
+            h2 {
+                margin: 0;
 
-                &:hover {
-                    text-decoration: underline;
+                a {
+                    color: inherit;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .progressBar {
+                width: 100%;
+                height: 10px;
+                background-color: var(--background-colour);
+                border: 3px solid var(--background-colour);
+
+                .progressFill {
+                    height: 100%;
+                    width: calc(var(--percentage) * 1%);
+                    background-color: var(--text-colour);
+                    background-image: repeating-linear-gradient(
+                        45deg,
+                        #fcfdfc,
+                        #fcfdfc 3px,
+                        #c4c4cc 3px,
+                        #c4c4cc 6px
+                    );
                 }
             }
 
             .alignRow {
-                background-color: purple;
+                margin: 0;
                 flex-direction: row;
+                align-items: center;
                 display: flex;
                 gap: 10px;
+
+                p {
+                    margin: 0;
+                }
+
+                .collapsibleToggle {
+                    user-select: none;
+                    cursor: pointer;
+                    transition: rotate 0.2s var(--collapsible-animation);
+
+                    &.clicked {
+                        rotate: 90deg;
+                    }
+                }
+            }
+
+            .collapsibleContainer {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.2s var(--collapsible-animation);
+
+                .collapsible {
+                    overflow: hidden;
+
+                    h4,
+                    ul {
+                        margin: 0;
+                    }
+
+                    .check li {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+
+                        &::marker {
+                            content: var(--checkmark) " ";
+                            font-size: 0.85em;
+                        }
+                    }
+
+                    .gap {
+                        margin-bottom: 0.75em;
+                    }
+
+                    hr {
+                        color: var(--text-colour);
+                    }
+                }
             }
         }
     }
