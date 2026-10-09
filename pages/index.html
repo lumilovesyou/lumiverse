@@ -5,33 +5,33 @@
         <link rel="stylesheet" href="assets/documents/style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
-    <header>
-        <center>
-            <div id="marquee" aria-label="Featured links">
-                <div class="track">
-                    {% for url in marquee_urls %}
-                    <span>
-                        <a href="{{ url.url }}" target="_blank">
-                            {{ url.text }}</a
-                        >
-                        {% if not loop.last %}
-                        <span>/</span>
-                        {% endif %}
-                    </span>
-                    {% endfor %}
-                </div>
-            </div>
-            <script src="assets/documents/index.js"></script>
-
-            <h1>Lumiverse</h1>
-            {% if quote.url %}
-            <h2><a href="{{ quote.url }}">{{ quote.text }}</a></h2>
-            {% else %}
-            <h2>{{ quote.text|safe }}</h2>
-            {% endif %}
-        </center>
-    </header>
     <body>
+        <header>
+            <center>
+                <div id="marquee" aria-label="Featured links">
+                    <div class="track">
+                        {% for url in marquee_urls %}
+                        <span>
+                            <a href="{{ url.url }}" target="_blank">
+                                {{ url.text }}</a
+                            >
+                            {% if not loop.last %}
+                            <span>/</span>
+                            {% endif %}
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <script src="assets/documents/index.js"></script>
+
+                <h1>Lumiverse</h1>
+                {% if quote.url %}
+                <h2><a href="{{ quote.url }}">{{ quote.text }}</a></h2>
+                {% else %}
+                <h2>{{ quote.text|safe }}</h2>
+                {% endif %}
+            </center>
+        </header>
         {% for segment in segments %}
         <div class="segment">
             <h3>{{ segment.categoryName }}</h3>
@@ -57,8 +57,8 @@
             </div>
         </div>
         {% endfor %}
+        <footer></footer>
     </body>
-    <footer></footer>
     <script>
         //Just here because I'm too lazy to reload the page every time
         /*async function reload() {
