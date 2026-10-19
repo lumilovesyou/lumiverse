@@ -1,19 +1,29 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <title>Lumiverse</title>
         <link rel="stylesheet" href="assets/documents/tracker/tracker.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <header>
             <h1><a href="../">Lumiverse</a></h1>
             <h2>Projects Page</h2>
         </header>
-        <div id="projectsContainer">
+        <noscript> Uhm... no Lynx support here... sorry :( </noscript>
+        <main id="projectsContainer">
             {% for project in projects %}
-            <div class="projectTracker">
-                <h2><a href="" target="_blank">{{ project.title }}</a></h2>
+            <article class="projectTracker">
+                <h2>
+                    <a
+                        href="{{ project.url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >{{ project.title }}</a
+                    >
+                </h2>
                 <div class="alignRow">
                     <p>{{ project.percentage }}%</p>
                     <div class="progressBar">
@@ -22,7 +32,14 @@
                             style="--percentage: {{ project.percentage }}"
                         ></div>
                     </div>
-                    <span class="collapsibleToggle">▶</span>
+                    <button
+                        class="collapsibleToggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-label="Show project details"
+                    >
+                        ▶
+                    </button>
                 </div>
                 <div class="collapsibleContainer">
                     <div class="collapsible">
@@ -50,16 +67,9 @@
                         {% endif %} {% endfor %}
                     </div>
                 </div>
-            </div>
+            </article>
             {% endfor %}
-        </div>
+        </main>
+        <script src="assets/documents/tracker/tracker.js"></script>
     </body>
-    <script src="assets/documents/tracker/tracker.js">
-        //Just here because I'm too lazy to reload the page every time
-        /*async function reload() {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            location.reload();
-        }
-        reload();*/
-    </script>
 </html>
