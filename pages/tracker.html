@@ -12,11 +12,11 @@
             <h1><a href="../">Lumiverse</a></h1>
             <h2>Projects Page</h2>
         </header>
-        <noscript> Uhm... no Lynx support here... sorry :( </noscript>
+        <noscript> Uhm... poor Lynx support here... sorry :( </noscript>
         <main id="projectsContainer">
             {% for project in projects %}
             <article class="projectTracker">
-                <h2>
+                <h2 title="{{ project.title }}">
                     <a
                         href="{{ project.url }}"
                         target="_blank"

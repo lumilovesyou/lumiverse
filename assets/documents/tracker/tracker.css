@@ -7,157 +7,142 @@
     --collapsible-animation: cubic-bezier(0.42, 0, 0.69, 0.97);
 }
 
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 5vh;
+}
+header h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+header a:hover,
+header a:focus-visible {
+    text-decoration: underline;
+}
+header h2 {
+    margin-top: 0;
+    font-size: 0.8em;
+    color: var(--dark-text-colour);
+}
+/* Header */
+
+/* Body */
 body {
+    padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
     background-color: var(--background-colour);
     color: var(--text-colour);
     font-family: serif;
     padding: 0;
     margin: 0;
 }
-
-header {
-    text-align: center;
-    margin-bottom: 5vh;
-
-    h1 {
-        font-size: 3em;
-        margin-bottom: 0;
-
-        a {
-            text-decoration: none;
-            color: inherit;
-
-            &:hover,
-            &:focus-visible {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    h2 {
-        margin-top: 0;
-        font-size: 0.8em;
-        color: var(--dark-text-colour);
-    }
+#projectsContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 2vw, 4rem);
+    justify-content: center;
 }
-
-body {
-    padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
-
-    #projectsContainer {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: clamp(1rem, 2vw, 4rem);
-        justify-content: center;
-
-        .projectTracker {
-            background-color: #002b36;
-            border: solid 2px var(--text-colour);
-            border-radius: 4px;
-            padding: 10px;
-
-            h2 {
-                margin: 0;
-
-                a {
-                    color: inherit;
-                    text-decoration: none;
-
-                    &:hover,
-                    &:focus-visible {
-                        text-decoration: underline;
-                    }
-                }
-            }
-
-            .progressBar {
-                width: 100%;
-                height: 10px;
-                background-color: var(--background-colour);
-                border: 3px solid var(--background-colour);
-
-                .progressFill {
-                    height: 100%;
-                    width: calc(var(--percentage) * 1%);
-                    background-color: var(--text-colour);
-                    background-image: repeating-linear-gradient(
-                        45deg,
-                        #fcfdfc,
-                        #fcfdfc 3px,
-                        #c4c4cc 3px,
-                        #c4c4cc 6px
-                    );
-                }
-            }
-
-            .alignRow {
-                margin: 0;
-                flex-direction: row;
-                align-items: center;
-                display: flex;
-                gap: 10px;
-
-                p {
-                    margin: 0;
-                }
-
-                .collapsibleToggle {
-                    appearance: none;
-                    border: 0;
-                    padding: 0;
-                    color: inherit;
-                    font: inherit;
-                    background: transparent;
-                    cursor: pointer;
-                    transition: rotate 0.2s var(--collapsible-animation);
-
-                    &.clicked {
-                        rotate: 90deg;
-                    }
-                }
-            }
-
-            .collapsibleContainer {
-                display: grid;
-                grid-template-rows: 0fr;
-                transition: grid-template-rows 0.2s var(--collapsible-animation);
-
-                &.isOpen {
-                    grid-template-rows: 1fr;
-                }
-
-                .collapsible {
-                    overflow: hidden;
-
-                    h4,
-                    ul {
-                        margin: 0;
-                    }
-
-                    .check li {
-                        list-style-type: none;
-                        margin: 0;
-                        padding: 0;
-
-                        &::marker {
-                            content: var(--checkmark) " ";
-                            font-size: 0.85em;
-                        }
-                    }
-
-                    .gap {
-                        margin-bottom: 0.75em;
-                    }
-
-                    hr {
-                        color: var(--text-colour);
-                    }
-                }
-            }
-        }
-    }
+.projectTracker {
+    background-color: #002b36;
+    border: solid 2px var(--text-colour);
+    width: min(100%, 16rem);
+    border-radius: 4px;
+    padding: 10px;
 }
+h2 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
+}
+.progressBar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--background-colour);
+    border: 3px solid var(--background-colour);
+}
+.progressFill {
+    height: 100%;
+    width: calc(var(--percentage) * 1%);
+    background-color: var(--text-colour);
+    background-image: repeating-linear-gradient(
+        45deg,
+        #fcfdfc,
+        #fcfdfc 3px,
+        #c4c4cc 3px,
+        #c4c4cc 6px
+    );
+}
+.alignRow {
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+p {
+    margin: 0;
+}
+.collapsibleToggle {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    background: transparent;
+    cursor: pointer;
+    transition: rotate 0.2s var(--collapsible-animation);
+}
+.collapsibleToggle.clicked {
+    rotate: 90deg;
+}
+.collapsibleContainer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s var(--collapsible-animation);
+}
+.collapsibleContainer.isOpen {
+    grid-template-rows: 1fr;
+}
+.collapsible {
+    overflow: hidden;
+}
+.collapsible hr {
+    color: var(--text-colour);
+}
+.collapsible h4,
+.collapsible ul {
+    margin: 0;
+}
+.collapsible li {
+    overflow-wrap: anywhere;
+}
+.collapsible .check li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.check li::marker {
+    content: var(--checkmark) " ";
+    font-size: 0.85em;
+}
+.collapsible .gap {
+    margin-bottom: 0.75em;
+}
+/* Body */
 
 @media (prefers-reduced-motion: reduce) {
     *,
