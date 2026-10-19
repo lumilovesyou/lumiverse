@@ -13,6 +13,11 @@
         "alt": "Credits"
       },
       {
+        "image": "navigation/tracker.webp",
+        "url": "/tracker",
+        "alt": "Project Tracker"
+      },
+      {
         "image": "navigation/placeholder-88x31.webp",
         "url": "/wow",
         "alt": "Placeholder 88x31"

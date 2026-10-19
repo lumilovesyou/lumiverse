@@ -100,8 +100,6 @@ body {
         text-align: center;
 
         .boxes {
-            background-color: green;
-
             a img {
                 transition: all 0.2s;
                 &:hover {
