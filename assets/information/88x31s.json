@@ -72,7 +72,43 @@
       {
         "image": "about-site/webp-now.webp",
         "url": "https://developers.google.com/speed/webp",
-        "alt": "WebP"
+        "alt": "Using WebP"
+      },
+      {
+        "image": "about-site/made-with-my-paws.webp",
+        "url": "https://maple.pet/",
+        "alt": "Made with my own two paws"
+      },
+      {
+        "image": "about-site/viewable-by-all.webp",
+        "url": "https://anybrowser.org/campaign/",
+        "alt": "Viewable with any browser"
+      }
+    ]
+  },
+  {
+    "categoryName": "Things I Support",
+    "newTab": true,
+    "boxes": [
+      {
+        "image": "i-support/diy-hrt.webp",
+        "url": "https://diyhrt.info",
+        "alt": "DIY HRT"
+      },
+      {
+        "image": "i-support/indieweb.webp",
+        "url": "https://indieweb.org/",
+        "alt": "IndieWeb"
+      },
+      {
+        "image": "i-support/godot.webp",
+        "url": "https://godotengine.org/",
+        "alt": "Godot Engine"
+      },
+      {
+        "image": "i-support/ublock-origin.webp",
+        "url": "https://ublockorigin.com/",
+        "alt": "uBlock Origin"
       }
     ]
   }
