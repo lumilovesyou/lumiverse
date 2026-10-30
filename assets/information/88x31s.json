@@ -111,5 +111,21 @@
         "alt": "uBlock Origin"
       }
     ]
+  },
+  {
+    "categoryName": "About Me",
+    "newTab": true,
+    "boxes": [
+      {
+        "image": "about-me/powered-by-estrogen.webp",
+        "url": "https://alyx.sh/posts/hrt-geocities-buttons/",
+        "alt": "Powered by Estrogen"
+      },
+      {
+        "image": "about-me/flags.webp",
+        "url": "https://badge.les.bi/",
+        "alt": "Trans/Pan"
+      }
+    ]
   }
 ]
